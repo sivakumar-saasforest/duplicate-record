@@ -1,7 +1,8 @@
 <?php
 
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
-
+use RzqApplication\Plugin\Store\Store;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class);
