@@ -100,7 +100,7 @@ class Home extends Component
 
         $newProductResult = (object) json_decode($product->create($data, $oldData['has_variants'] ? 'variant' : 'single'), true);
 
-        $result = (object) json_decode($product->product(), true);
+        $result = (object) json_decode($product->all(), true);
         $this->data =  $result->data;
     }
 
@@ -135,12 +135,12 @@ class Home extends Component
             "coupon_code" => $oldData['coupon_code'] . '-COPY-' . Str::random(2),
             "usage_limit_per_customer" => $oldData['usage_limit_per_customer'],
             "usage_limit_value" => $oldData['usage_limit_value'],
-            "discount_percent" => $oldData['discount_percent'],
-            "discount_amount" => $oldData['discount_amount'],
+            "discount_percent" => $oldData['discount_percent'] ? $oldData['discount_percent'] : 1,
+            "discount_amount" => $oldData['discount_amount'] ? $oldData['discount_amount'] : 1,
             "minimum_order_condition" => $oldData['minimum_order_condition'],
             "minimum_order_value" => $oldData['minimum_order_value'],
             "minimum_order_quantity" => $oldData['minimum_order_quantity'],
-            "maximum_discount_amount" => $oldData['maximum_discount_amount'],
+            "maximum_discount_amount" => $oldData['maximum_discount_amount'] ? $oldData['maximum_discount_amount'] : 1,
             "buy_item" => $oldData['buy_item'],
             "get_free_item" => $oldData['get_free_item'],
             "is_show_coupon_to_customer" => $oldData['is_show_coupon_to_customer'],
@@ -160,9 +160,9 @@ class Home extends Component
         }
 
         if (count($applyOn)) {
-            $data[$oldData['apply_coupon_on']] = $applyOn;
+            $data[$oldData['apply_coupon_on'] == 'specific_products' ? 'selected_products' : 'selected_categories'] = $applyOn;
         }
-
+        
         $coupon->create($data);
 
         $result = (object) json_decode($coupon->all(), true);
