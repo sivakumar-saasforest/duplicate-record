@@ -9,12 +9,13 @@
         </x-filament::input.select>
     </x-filament::input.wrapper>
 
-    @if ($data)
+
     <div class="grid flex-1 auto-cols-fr gap-y-8 mt-5">
         <div class="flex flex-col gap-y-6">
             <div ax-load="" ax-load-src="http://127.0.0.1:8002/js/filament/tables/components/table.js?v=3.2.62.0" x-data="table" class="fi-ta">
                 <div class="fi-ta-ctn divide-y divide-gray-200 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:divide-white/10 dark:bg-gray-900 dark:ring-white/10">
                     <div class="fi-ta-content relative divide-y divide-gray-200 overflow-x-auto dark:divide-white/10 dark:border-t-white/10">
+                        @if ($data)
                         <table class="fi-ta-table w-full table-auto divide-y divide-gray-200 text-start dark:divide-white/5">
                             <thead class="divide-y divide-gray-200 dark:divide-white/5">
                                 <tr class="bg-gray-50 dark:bg-white/5">
@@ -63,10 +64,13 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        @else
+                        <p class="p-10 font-semibold">No record found...!</p>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @endif
+
 </div>
