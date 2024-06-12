@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3b06849bfdf0524e6a11575598ae1b2",
+    "content-hash": "57b5e68d7cb8812b2e4c4ba3d6243ea7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4960,16 +4960,16 @@
         },
         {
             "name": "rzq-application/plugin",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sivakumar-saasforest/rzq-application.git",
-                "reference": "0622cc07987906466007134564ee3d8eed6073e8"
+                "reference": "fec84b78f192ac966eddacddd900ab9682cce2cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sivakumar-saasforest/rzq-application/zipball/0622cc07987906466007134564ee3d8eed6073e8",
-                "reference": "0622cc07987906466007134564ee3d8eed6073e8",
+                "url": "https://api.github.com/repos/sivakumar-saasforest/rzq-application/zipball/fec84b78f192ac966eddacddd900ab9682cce2cd",
+                "reference": "fec84b78f192ac966eddacddd900ab9682cce2cd",
                 "shasum": ""
             },
             "require": {
@@ -5005,9 +5005,9 @@
             "description": "create RZQ plugin",
             "support": {
                 "issues": "https://github.com/sivakumar-saasforest/rzq-application/issues",
-                "source": "https://github.com/sivakumar-saasforest/rzq-application/tree/1.0.0"
+                "source": "https://github.com/sivakumar-saasforest/rzq-application/tree/1.0.1"
             },
-            "time": "2024-06-12T08:36:16+00:00"
+            "time": "2024-06-12T09:41:31+00:00"
         },
         {
             "name": "spatie/color",
