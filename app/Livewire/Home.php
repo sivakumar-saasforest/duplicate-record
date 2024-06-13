@@ -63,8 +63,8 @@ class Home extends Component
             "price" => $oldData['price'],
             "discounted_price" => $oldData['discounted_price'],
             "description" => $oldData['description']['en'],
-            "sku" => $oldData['inventory']['sku'] . Str::random(5),
-            "total_quantity" => $oldData['inventory']['total_quantity'],
+            "sku" => ($oldData['inventory']['sku'] ?? 'SKU') . Str::random(5),
+            "total_quantity" => $oldData['inventory']['total_quantity'] ?? 1,
             "shipping_tax" => [
                 "weight" => $oldData['shipping_tax']['weight'],
                 "unit" => $oldData['shipping_tax']['unit'],
