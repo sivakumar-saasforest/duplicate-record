@@ -100,6 +100,7 @@ class Home extends Component
 
         $newProductResult = (object) json_decode($product->create($data, $oldData['has_variants'] ? 'variant' : 'single'), true);
 
+        dd($newProductResult);
         $result = (object) json_decode($product->all(), true);
         $this->data =  $result->data;
     }
