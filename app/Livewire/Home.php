@@ -66,10 +66,10 @@ class Home extends Component
             "sku" => ($oldData['inventory']['sku'] ?? 'SKU') . Str::random(5),
             "total_quantity" => $oldData['inventory']['total_quantity'] ?? 1,
             "shipping_tax" => [
-                "weight" => $oldData['shipping_tax']['weight'] ?? null,
-                "unit" => $oldData['shipping_tax']['unit'] ?? null,
-                "hsn_product_code" => $oldData['shipping_tax']['hsn_product_code'] ?? null,
-                "tax_percentage" => $oldData['shipping_tax']['tax_percentage'] ?? null
+                "weight" => $oldData['shipping_tax']['weight'] ?? 1,
+                "unit" => $oldData['shipping_tax']['unit'] ?? 1,
+                "hsn_product_code" => $oldData['shipping_tax']['hsn_product_code'] ?? 'null',
+                "tax_percentage" => $oldData['shipping_tax']['tax_percentage'] ?? 1
             ]
         ];
 
