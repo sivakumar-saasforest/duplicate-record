@@ -10,7 +10,6 @@ use RzqApplication\Plugin\Store\ProductCategory;
 
 class Home extends Component
 {
-
     public $data = [];
     public $status;
 
@@ -60,7 +59,7 @@ class Home extends Component
 
         $data = [
             "name" => $oldData['name']['en'] . '-duplicate',
-            "price" => $oldData['price'],
+            "price" => (int) $oldData['price'],
             "discounted_price" => $oldData['discounted_price'],
             "description" => $oldData['description']['en'],
             "sku" => ($oldData['inventory']['sku'] ?? 'SKU') . Str::random(5),
@@ -100,7 +99,6 @@ class Home extends Component
 
         $newProductResult = (object) json_decode($product->create($data, $oldData['has_variants'] ? 'variant' : 'single'), true);
 
-        dd($newProductResult);
         $result = (object) json_decode($product->all(), true);
         $this->data =  $result->data;
     }
@@ -128,8 +126,6 @@ class Home extends Component
         $coupon = new Coupon();
         $productCategoryResult = (object) json_decode($coupon->show((int) $couponId), true);
         $oldData = $productCategoryResult->data;
-
-
 
         $data = [
             "coupon_type_id" => $oldData['coupon_type_id'],
@@ -163,7 +159,7 @@ class Home extends Component
         if (count($applyOn)) {
             $data[$oldData['apply_coupon_on'] == 'specific_products' ? 'selected_products' : 'selected_categories'] = $applyOn;
         }
-        
+
         $coupon->create($data);
 
         $result = (object) json_decode($coupon->all(), true);
