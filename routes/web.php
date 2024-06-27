@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Home;
+use App\Livewire\Product;
+use App\Livewire\ProductFaqView;
 use Illuminate\Support\Facades\Route;
 use RzqApplication\Plugin\Store\Store;
 /*
@@ -15,3 +17,5 @@ use RzqApplication\Plugin\Store\Store;
 */
 
 Route::get('/', Home::class);
+Route::get('/product-fqz', Product::class)->name('product-fqz')->middleware('rzq-auth');
+Route::get('/product-fqz-edit/{id}', ProductFaqView::class)->name('product-fqz-edit')->middleware('rzq-auth');

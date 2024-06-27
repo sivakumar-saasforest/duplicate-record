@@ -1,5 +1,8 @@
 <div class="m-3">
+    <div class="flex justify-between">
     <h1 class="text-[20px] font-semibold tracking-tight fi-header-heading text-gray-950 dark:text-white mb-3">Duplicate Record Type</h1>
+    <h1 class="text-[20px] text-right font-semibold tracking-tight fi-header-heading text-gray-950 dark:text-white mb-3"><a href="{{ route('product-fqz') }}">Add FAQ's</a></h1>
+    </div>
     <x-filament::input.wrapper class="w-[30%]">
         <x-filament::input.select wire:model.live="status">
             <option value="">-- Select option --</option>
